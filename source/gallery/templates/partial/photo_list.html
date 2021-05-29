@@ -1,0 +1,26 @@
+
+{% if is_paginated %}
+{% include 'partial/paginate.html' %}
+{% endif %}
+
+{% for photo in photos %}
+    <div class="box">
+        <img src="/../..{{ photo.photo.url }}" alt="">
+        <p>{{ photo.caption }}</p>
+        <p>{{ photo.author }}</p>
+        <p>{{ photo.date }}</p>
+        {% if photo.albom %}
+            print("***************************")
+        {% else %}
+            print("NNNNNNNNNNNNNNNNNNNNNN")
+        {% endif %}
+    </div>
+
+{% empty %}
+    <h2 class="text-center">Нет фото</h2>
+{% endfor %}
+
+
+{% if is_paginated %}
+     {% include 'partial/pagination.html' %}
+{% endif %}
