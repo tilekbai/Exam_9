@@ -76,3 +76,11 @@ class AlbomView(DetailView):
     template_name = 'albom/view.html'
     print("*************", Albom.objects.first())
 
+
+class CreateAlbomView(CreateView):
+    template_name = 'albom/create.html'
+    form_class = AlbomForm
+    model = Albom
+    success_url = reverse_lazy('gallery:index')
+
+    
