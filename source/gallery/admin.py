@@ -7,7 +7,7 @@ class PhotoAdmin(admin.ModelAdmin):
     list_display = ['id', 'author', 'caption', 'albom', 'date', 'photo']
     list_filter = ['author']
     search_fields = ['author']
-    fields = ['id', 'author', 'caption', 'albom', 'date']
+    fields = ['id', 'author', 'caption', 'albom', 'date', 'photo']
     readonly_fields = ['id', 'date']
 
 

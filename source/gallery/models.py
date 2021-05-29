@@ -10,7 +10,7 @@ class Photo(models.Model):
     caption = models.CharField(max_length=155, blank=False)
     date = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
-    albom = models.CharField(max_length=100, blank=True)
+    albom = models.ForeignKey("gallery.Albom", blank=True, null=True, on_delete=models.CASCADE)
 
 
 class Albom(models.Model):
