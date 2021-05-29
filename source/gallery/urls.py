@@ -9,5 +9,6 @@ app_name = "gallery"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
-    path('<int:pk>/', PhotoView.as_view(), name='view-photo')
+    path('<int:pk>/', PhotoView.as_view(), name='view-photo'),
+    path('create/photo/', CreatePhotoView.as_view(), name='add'),
 ]

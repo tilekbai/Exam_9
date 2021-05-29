@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from django.urls import reverse, reverse_lazy
 from django.db.models import Q
 from django.utils.http import urlencode
@@ -54,3 +54,8 @@ class PhotoView(DetailView):
     template_name = 'photo/view.html'
 
 
+class CreatePhotoView(CreateView):
+    template_name = 'photo/create.html'
+    form_class = PhotoForm
+    model = Photo
+    success_url = reverse_lazy('gallery:index')
