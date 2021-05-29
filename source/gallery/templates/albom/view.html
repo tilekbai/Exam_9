@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block menu %}
+{% endblock menu %}
+
+{% block page_header %}Album {{ albom.id }}{% endblock page_header %}
+
+{% block content %}
+    <div class="article-div">
+        <div class="text-content">
+            <p>Name: {{ albom.name }}</p>
+            <p>Description: {{ albom.description }}</p>
+
+            {% for photo in albom.photos.all %}
+            <img src="/../..{{ photo.photo.url }}" alt="">
+            <p>{{ photo.caption }}</p>
+            <p>User: {{ photo.author }}</p>
+            <p>{{ photo.date|date:"d.m.Y" }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

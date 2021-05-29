@@ -1,4 +1,3 @@
-
 {% if is_paginated %}
 {% include 'partial/paginate.html' %}
 {% endif %}
@@ -10,7 +9,7 @@
         <p>User: {{ photo.author }}</p>
         <p>{{ photo.date|date:"d.m.Y" }}</p>
         {% if photo.albom %}
-            <p>Album: {{ photo.albom.name }}</p>
+            <p><a href="{% url 'gallery:view-albom' photo.albom.pk %}">Album: {{ photo.albom.name }}</a></p>
         {% else %}
             
         {% endif %}
@@ -20,7 +19,6 @@
 {% empty %}
     <h2 class="text-center">Нет фото</h2>
 {% endfor %}
-
 
 {% if is_paginated %}
      {% include 'partial/paginate.html' %}

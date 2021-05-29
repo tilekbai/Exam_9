@@ -71,3 +71,8 @@ class PhotoUpdateView(UpdateView):
         return reverse('gallery:view-photo', kwargs={'pk': self.kwargs.get('pk')})
 
 
+class AlbomView(DetailView):
+    model = Albom
+    template_name = 'albom/view.html'
+    print("*************", Albom.objects.first())
+
