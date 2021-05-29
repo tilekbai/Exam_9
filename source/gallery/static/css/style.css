@@ -53,64 +53,8 @@ body {
     border: solid 1px gray;
 }
 
-
-.heart:hover {
-    background-position: right;
-    animation: animate .8s steps(28) 1;
-}
-
-@keyframes animate {
-    0% {
-        background-position: left;
-    }
-    100% {
-        background-position: right;
-    }
-
-}
-
-.content {
-    border: 2px solid #eae2e1;
-    width: 10%;
-    height: 10px;
-    padding: 13px 16px;
-    border-radius: 5px;
+.main_profile_block {
     display: flex;
-    cursor: pointer;
-}
-
-.content.heart-active {
-    border-color: #f9b9c4;
-    background-color: #fbd0d8;
-
-}
-.content.heart {
-    background: url(../../static/images/pure-css-twitter-heart-animation.gif) no-repeat;
-    background-position: left;
-    background-size: 100%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-}
-
-.like {
-    margin-left: 30px;
-    font-size: 21px;
-    font-family: "Montserat", sans-serif;
-    color: gray;
-    height: 22px;
-}
-
-.like.heart-active{
-    color: black;
-
-}
-
-.numb::before{
-    content: "12";
-    font-size: 21px;
-    font-weight: 600;
-    font-family: sans-serif;
-    color: #9c9496;
-    margin-left: 7px;
-
+    align-content: space-between;
+    
 }
