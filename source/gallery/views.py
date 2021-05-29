@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.urls import reverse, reverse_lazy
 from django.db.models import Q
 from django.utils.http import urlencode
@@ -47,3 +47,10 @@ class IndexView(ListView):
             context['query'] = urlencode({'search_value': self.search_data})
 
         return context
+
+
+class PhotoView(DetailView):
+    model = Photo
+    template_name = 'photo/view.html'
+
+

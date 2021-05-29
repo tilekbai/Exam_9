@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block menu %}
+{% endblock menu %}
+
+{% block page_header %}Photo {{ photo.id }}{% endblock page_header %}
+
+{% block content %}
+    <div class="article-div">
+        <div class="text-content">
+            <img src="/../..{{ photo.photo.url }}" alt="">
+            <p>Author: {{ photo.author }}</p>
+            <p>Caption: {{ photo.caption }}</p>
+            <p>Date: {{ photo.date }}</p>
+            <p>Albom: {{ photo.albom }}</p>
+        </div>
+    </div>
+{% endblock content %}

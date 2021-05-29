@@ -7,12 +7,12 @@
     <div class="box">
         <img src="/../..{{ photo.photo.url }}" alt="">
         <p>{{ photo.caption }}</p>
-        <p>{{ photo.author }}</p>
-        <p>{{ photo.date }}</p>
+        <p>User: {{ photo.author }}</p>
+        <p>{{ photo.date|date:"d.m.Y" }}</p>
         {% if photo.albom %}
-            print("***************************")
+            <p>Album: {{ photo.albom.name }}</p>
         {% else %}
-            print("NNNNNNNNNNNNNNNNNNNNNN")
+            
         {% endif %}
     </div>
 
