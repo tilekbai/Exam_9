@@ -11,4 +11,5 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('<int:pk>/', PhotoView.as_view(), name='view-photo'),
     path('create/photo/', CreatePhotoView.as_view(), name='add'),
+    path('<int:pk>/update/photo/', PhotoUpdateView.as_view(), name='update-photo'),
 ]
