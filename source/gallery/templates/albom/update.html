@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block menu %}<li><a href="{% url 'gallery:view-albom' albom.id %}">Вернуться к фото</a></li>{% endblock menu %}
+{% block page_header %}Редактирвоать фото {{ photo.id }}{% endblock page_header %}
+
+{% block content %}
+    <form action="{% url 'gallery:update-albom' albom.id %}" method="post">
+        {% include "partial/form.html" with button_text="Редактировать" %}
+    </form>
+{% endblock content %}

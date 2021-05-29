@@ -74,7 +74,6 @@ class PhotoUpdateView(UpdateView):
 class AlbomView(DetailView):
     model = Albom
     template_name = 'albom/view.html'
-    print("*************", Albom.objects.first())
 
 
 class CreateAlbomView(CreateView):
@@ -83,4 +82,14 @@ class CreateAlbomView(CreateView):
     model = Albom
     success_url = reverse_lazy('gallery:index')
 
-    
+
+class AlbomUpdateView(UpdateView):
+    form_class = AlbomForm
+    model = Albom
+    template_name = 'albom/update.html'
+    context_object_name = 'albom'
+
+    def get_success_url(self):
+        return reverse('gallery:view-albom', kwargs={'pk': self.kwargs.get('pk')})
+
+

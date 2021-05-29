@@ -14,4 +14,5 @@ urlpatterns = [
     path('<int:pk>/update/photo/', PhotoUpdateView.as_view(), name='update-photo'),
     path('albom/<int:pk>/', AlbomView.as_view(), name='view-albom'),
     path('create/albom/', CreateAlbomView.as_view(), name='add-albom'),
+    path('<int:pk>/update/albom/', AlbomUpdateView.as_view(), name='update-albom')
 ]
