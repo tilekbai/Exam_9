@@ -11,7 +11,7 @@
         {% if photo.albom %}
             <p><a href="{% url 'gallery:view-albom' photo.albom.pk %}">Album: {{ photo.albom.name }}</a></p>
         {% else %}
-            
+            <p></p>
         {% endif %}
         <p><a href="{% url 'gallery:view-photo' photo.pk %}">more</a></p>
     </div>
