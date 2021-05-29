@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from .serializers import *
+
+
+class AddToFavView(generics.CreateAPIView):
+    serializer_class = AddToFavSerializer
+
+
+class DeleteFavView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = DeleteFavSerializer
+    queryset = Favorite.objects.all()
