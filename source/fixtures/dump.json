@@ -24,6 +24,124 @@
   }
 },
 {
+  "model": "gallery.photo",
+  "pk": 5,
+  "fields": {
+    "photo": "bird.jpg",
+    "caption": "bird",
+    "author": 1,
+    "albom": 1,
+    "private": false,
+    "date": "2021-05-29T06:59:54.025Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 7,
+  "fields": {
+    "photo": "tree.jpg",
+    "caption": "Tree",
+    "author": 1,
+    "albom": 1,
+    "private": false,
+    "date": "2021-05-29T07:11:29.481Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 8,
+  "fields": {
+    "photo": "dog.jpg",
+    "caption": "KoHors",
+    "author": 1,
+    "albom": 1,
+    "private": false,
+    "date": "2021-05-29T07:14:22.745Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 9,
+  "fields": {
+    "photo": "hand.jpg",
+    "caption": "Hand Birouza",
+    "author": 1,
+    "albom": null,
+    "private": false,
+    "date": "2021-05-29T08:38:10.400Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 10,
+  "fields": {
+    "photo": "spic.jpg",
+    "caption": "Twitter Bird",
+    "author": 1,
+    "albom": null,
+    "private": false,
+    "date": "2021-05-29T08:37:42.313Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 11,
+  "fields": {
+    "photo": "a.jpg",
+    "caption": "wefwfe",
+    "author": 1,
+    "albom": 1,
+    "private": false,
+    "date": "2021-05-29T09:45:03.523Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 13,
+  "fields": {
+    "photo": "bb.jpg",
+    "caption": "Head",
+    "author": 1,
+    "albom": 3,
+    "private": false,
+    "date": "2021-05-29T10:13:50.320Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 14,
+  "fields": {
+    "photo": "aad.jpg",
+    "caption": "Cats Doggy",
+    "author": 2,
+    "albom": null,
+    "private": false,
+    "date": "2021-05-29T12:56:52.399Z"
+  }
+},
+{
+  "model": "gallery.albom",
+  "pk": 1,
+  "fields": {
+    "name": "Animals",
+    "description": "World Wild BBC. Мир дикой природы",
+    "author": 1,
+    "private": false,
+    "date": "2021-05-29T13:01:14.776Z"
+  }
+},
+{
+  "model": "gallery.albom",
+  "pk": 3,
+  "fields": {
+    "name": "Robot",
+    "description": "Mashin Gun",
+    "author": 1,
+    "private": false,
+    "date": "2021-05-29T10:12:46.933Z"
+  }
+},
+{
   "model": "gallery.favorite",
   "pk": 1,
   "fields": {
@@ -33,11 +151,38 @@
   }
 },
 {
+  "model": "gallery.favorite",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "photo": 8,
+    "albom": null
+  }
+},
+{
+  "model": "gallery.favorite",
+  "pk": 4,
+  "fields": {
+    "author": 1,
+    "photo": 9,
+    "albom": null
+  }
+},
+{
+  "model": "gallery.favorite",
+  "pk": 5,
+  "fields": {
+    "author": 1,
+    "photo": 5,
+    "albom": null
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$260000$abb7sl8pPhsjTb7MpQrAKI$RtcFjNRSjAgbxO9IIfV1BhvZANUYsEIyN029Uf5jOHM=",
-    "last_login": "2021-05-29T05:32:04.747Z",
+    "last_login": "2021-05-29T13:00:52.911Z",
     "is_superuser": true,
     "username": "user",
     "first_name": "",
@@ -47,6 +192,44 @@
     "is_active": true,
     "date_joined": "2021-05-29T05:31:33.699Z",
     "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$NI5zN9kblYRRkQpoooeYnD$m/Wiee/34VIO7XgOFAb/PzqGyQfbVy+6pcpvAAzfhN8=",
+    "last_login": "2021-05-29T13:03:45.105Z",
+    "is_superuser": false,
+    "username": "bobby",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-29T12:00:57.975Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$wL1hrA7zJuvBbtIo3GsFw0$wvXp0oaMvXvUXrp5GjvgjKTUHvmR5x+h9xy9eVXE+EU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Nika",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-29T12:35:29Z",
+    "groups": [
+      1
+    ],
     "user_permissions": []
   }
 }
