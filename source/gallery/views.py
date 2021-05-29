@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
 from django.db.models import Q
 from django.utils.http import urlencode
@@ -93,3 +93,15 @@ class AlbomUpdateView(UpdateView):
         return reverse('gallery:view-albom', kwargs={'pk': self.kwargs.get('pk')})
 
 
+class PhotoDeleteView(DeleteView):
+    model = Photo
+    template_name = 'photo/delete.html'
+    context_object_name = 'photo'
+    success_url = reverse_lazy('gallery:index')
+
+
+class AlbomDeleteView(DeleteView):
+    model = Albom
+    template_name = 'albom/delete.html'
+    context_object_name = 'albom'
+    success_url = reverse_lazy('gallery:index')

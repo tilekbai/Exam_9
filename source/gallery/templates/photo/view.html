@@ -2,6 +2,7 @@
 
 {% block menu %}
 <li><a href="{% url 'gallery:update-photo' photo.pk %} ">Change</a></li>
+<li><a href="{% url 'gallery:delete' photo.pk %} ">Delete</a></li>
 {% endblock menu %}
 
 {% block page_header %}Photo {{ photo.id }}{% endblock page_header %}
