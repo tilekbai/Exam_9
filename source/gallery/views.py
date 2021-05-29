@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
 from django.db.models import Q
@@ -61,11 +60,15 @@ class CreatePhotoView(CreateView):
     success_url = reverse_lazy('gallery:index')
 
 
-class PhotoUpdateView(UpdateView):
+class PhotoUpdateView(PermissionRequiredMixin, UpdateView):
     form_class = PhotoForm
     model = Photo
     template_name = 'photo/update.html'
     context_object_name = 'photo'
+    permission_required = 'photo.change_photo'   
+
+    def has_permission(self):
+        return self.get_object().author == self.request.user or super().has_permission()
 
     def get_success_url(self):
         return reverse('gallery:view-photo', kwargs={'pk': self.kwargs.get('pk')})
@@ -83,25 +86,37 @@ class CreateAlbomView(CreateView):
     success_url = reverse_lazy('gallery:index')
 
 
-class AlbomUpdateView(UpdateView):
+class AlbomUpdateView(PermissionRequiredMixin, UpdateView):
     form_class = AlbomForm
     model = Albom
     template_name = 'albom/update.html'
     context_object_name = 'albom'
+    permission_required = 'albom.change_albom'    
+
+    def has_permission(self):
+        return self.get_object().author == self.request.user or super().has_permission()
 
     def get_success_url(self):
         return reverse('gallery:view-albom', kwargs={'pk': self.kwargs.get('pk')})
 
 
-class PhotoDeleteView(DeleteView):
+class PhotoDeleteView(PermissionRequiredMixin, DeleteView):
     model = Photo
     template_name = 'photo/delete.html'
     context_object_name = 'photo'
-    success_url = reverse_lazy('gallery:index')
+    success_url = reverse_lazy('gallery:index')   
+    permission_required = 'photo.delete_photo'    
+
+    def has_permission(self):
+        return self.get_object().author == self.request.user or super().has_permission()
 
 
-class AlbomDeleteView(DeleteView):
+class AlbomDeleteView(PermissionRequiredMixin, DeleteView):
     model = Albom
     template_name = 'albom/delete.html'
     context_object_name = 'albom'
     success_url = reverse_lazy('gallery:index')
+    permission_required = 'albom.delete_albom'   
+
+    def has_permission(self):
+        return self.get_object().author == self.request.user or super().has_permission()
