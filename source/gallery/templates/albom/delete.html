@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}delete albom{% endblock %}
+{% block page_header %}Вы уверены, что хотите удалить альбом {{ albom.name }}?{% endblock page_header %}
+
+{% block content%}
+    <form action="{% url 'gallery:delete-albom' albom.id %}", method="POST">
+        {% include 'partial/form.html' with button_text="Yes" %}
+        <a href="{% url 'gallery:view-albom' albom.id %}">No</a>
+    </form>
+{% endblock content %}

@@ -20,5 +20,6 @@ urlpatterns = [
 
     path('albom/<int:pk>/', AlbomView.as_view(), name='view-albom'),
     path('create/albom/', CreateAlbomView.as_view(), name='add-albom'),
-    path('<int:pk>/update/albom/', AlbomUpdateView.as_view(), name='update-albom')
+    path('<int:pk>/update/albom/', AlbomUpdateView.as_view(), name='update-albom'),
+    path('<int:pk>/delete/albom/', AlbomDeleteView.as_view(), name='delete-albom')
 ]

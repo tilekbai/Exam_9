@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block title %}delete photo{% endblock %}
-{% block page_header %}Вы уверены, что хотите удалить фото {{ article.title }}?{% endblock page_header %}
+{% block page_header %}Вы уверены, что хотите удалить фото {{ photo.id }}?{% endblock page_header %}
 
 {% block content%}
-    <form action="{% url 'gallery:delete' photo.id %}", method="POST">
+    <form action="{% url 'gallery:delete' photo.id %}" method="POST">
         {% include 'partial/form.html' with button_text="Yes" %}
         <a href="{% url 'gallery:view-photo' photo.id %}">No</a>
     </form>
